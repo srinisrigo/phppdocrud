@@ -4,6 +4,17 @@ include 'utility/country_codes.php';
 include 'utility/index.php';
 $pdo = pdo_connect_mysql();
 $msg = '';
+$nameErr = "";
+$emailErr = "";
+$titleErr = "";
+$countryErr = "";
+$phoneErr = "";
+$name = isset($_POST['name']) ? $_POST['name'] : '';
+$email = isset($_POST['email']) ? $_POST['email'] : '';
+$phone = isset($_POST['phone']) ? $_POST['phone'] : '';
+$title = isset($_POST['title']) ? $_POST['title'] : '';
+$country = isset($_POST['country']) ? $_POST['country'] : '';
+$created = isset($_POST['created']) ? $_POST['created'] : date('Y-m-d H:i:s');
 $titles = get_titles();
 // Get the page via GET request (URL param: page), if non exists default the page to 1
 $page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
@@ -76,7 +87,7 @@ if (!empty($_POST)) {
             <?php if ($titleErr): ?>
             <label class="text-danger small"><?=$titleErr?></label>
             <?php endif; ?>
-            <select name="title" id="title" class="form-control <?=isset($titleErr)? 'is-invalid':''?>">
+            <select name="title" id="title" class="form-control <?=!empty($titleErr)? 'is-invalid':''?>">
                 <option value="-1" disabled selected hidden>Title</option>
                 <?php foreach ($titles as $item): ?>
                 <option value="<?=$item?>" <?php if ($title === $item): ?> selected <?php endif; ?> ><?=$item?></option>
@@ -88,21 +99,21 @@ if (!empty($_POST)) {
             <?php if ($nameErr): ?>
             <label class="text-danger small"><?=$nameErr?></label>
             <?php endif; ?>
-            <input class="form-control <?=isset($nameErr)? 'is-invalid':''?>" type="text" name="name" placeholder="John Doe" id="name" <?php if ($name): ?>value="<?=$name?>" <?php endif; ?> >
+            <input class="form-control <?=!empty($nameErr)? 'is-invalid':''?>" type="text" name="name" placeholder="John Doe" id="name" <?php if ($name): ?>value="<?=$name?>" <?php endif; ?> >
           </div>
           <div class="form-group">
             <label for="email">Email</label>
             <?php if ($emailErr): ?>
             <label class="text-danger small"><?=$emailErr?></label>
             <?php endif; ?>
-            <input class="form-control <?=isset($emailErr)? 'is-invalid':''?>" type="text" name="email" placeholder="johndoe@example.com" id="email" <?php if ($email): ?>value="<?=$email?>" <?php endif; ?> >
+            <input class="form-control <?=!empty($emailErr)? 'is-invalid':''?>" type="text" name="email" placeholder="johndoe@example.com" id="email" <?php if ($email): ?>value="<?=$email?>" <?php endif; ?> >
           </div>
           <div class="form-group">
             <label for="country">Country</label>
             <?php if ($countryErr): ?>
             <label class="text-danger small"><?=$countryErr?></label>
             <?php endif; ?>
-            <select name="country" id="country" class="form-control <?=isset($countryErr)? 'is-invalid':''?>">
+            <select name="country" id="country" class="form-control <?=!empty($countryErr)? 'is-invalid':''?>">
                 <option value="-1" disabled selected hidden>Country</option>
                 <?php foreach ($country_codes as $country_code): ?>
                 <option value="<?=$country_code['code']?>" <?php if ($country === $country_code['code']): ?> selected <?php endif; ?>><?=$country_code['name'].'('.$country_code['code'].')'?></option>
@@ -114,7 +125,7 @@ if (!empty($_POST)) {
             <?php if ($phoneErr): ?>
             <label class="text-danger small"><?=$phoneErr?></label>
             <?php endif; ?>
-            <input class="form-control <?=isset($phoneErr)? 'is-invalid':''?>" type="text" name="phone" placeholder="2025550143" id="phone" <?php if ($phone): ?>value="<?=$phone?>" <?php endif; ?> >
+            <input class="form-control <?=!empty($phoneErr)? 'is-invalid':''?>" type="text" name="phone" placeholder="2025550143" id="phone" <?php if ($phone): ?>value="<?=$phone?>" <?php endif; ?> >
           </div>
           <div class="form-group">
             <input class="btn btn-success" type="submit" value="Create">
