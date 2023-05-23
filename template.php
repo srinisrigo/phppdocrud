@@ -15,6 +15,8 @@ echo <<<EOT
 		<meta charset="utf-8">
 		<title>$title</title>
 		<link href="$assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<script src="$assets/jquery/jquery.min.js" defer></script>
+		<script src="$assets/js/bootstrap.min.js" defer></script>
 	</head>
 	<body>
 		<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
@@ -36,12 +38,8 @@ echo <<<EOT
 EOT;
 }
 function template_footer() {
-	$dir_prefix = isset($GLOBALS['is_dir_prefix']) && $GLOBALS['is_dir_prefix'];
-	$assets = $dir_prefix?'../assets':'assets';
 echo <<<EOT
 		</div>
-		<script src="$assets/jquery/jquery.min.js" defer></script>
-		<script src="$assets/js/bootstrap.min.js" defer></script>
     </body>
 </html>
 EOT;
