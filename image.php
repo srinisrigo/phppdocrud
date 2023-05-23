@@ -1,5 +1,5 @@
 <?php
-include 'functions.php';
+include 'template.php';
 $msg = '';
 $image = isset($_GET['image']) && is_string($_GET['image']) ? $_GET['image'] : '';
 if (!empty($image)) { 

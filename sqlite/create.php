@@ -130,7 +130,7 @@ if (!empty($_POST)) {
           </div>
           <div class="form-group">
             <input class="btn btn-success" type="submit" value="Create">
-            <a class="btn btn-danger" href="read.php?page=<?=$page?>">Cancel</a>   
+            <a class="btn btn-danger" href="index.php?page=<?=$page?>">Cancel</a>   
           </div>
       </form>
     </div>

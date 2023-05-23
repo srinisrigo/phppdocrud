@@ -23,7 +23,7 @@ if (isset($_GET['id'])) {
             $msg = 'You have deleted the contact!';
         } else {
             // User clicked the "No" button, redirect them back to the read page
-            header('Location: read.php?page='.$page);
+            header('Location: index.php?page='.$page);
             exit;
         }
     }
@@ -47,7 +47,7 @@ if (isset($_GET['id'])) {
             </li>
             <li class="list-group-item">
                 <a class="btn btn-success" href="delete.php?id=<?=$contact['id']?>&confirm=yes&page=<?= $page ?>">Yes</a>
-                <a class="btn btn-danger" href="read.php?page=<?=$page?>">No</a>
+                <a class="btn btn-danger" href="index.php?page=<?=$page?>">No</a>
             </li>
             <?php endif; ?>
         </ul>

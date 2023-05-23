@@ -5,6 +5,8 @@ $assets = $dir_prefix?'../assets':'assets';
 $index = $dir_prefix?'../index.php':'index.php';
 $image = $dir_prefix?'../image.php':'image.php';
 $news = $dir_prefix?'../news.php':'news.php';
+$mysql = $dir_prefix?'../mysql':'mysql';
+$sqlite = $dir_prefix?'../sqlite':'sqlite';
 // echo '<script>console.log('.json_encode(isset($is_dir_prefix) && $is_dir_prefix, JSON_HEX_TAG).');</script>';;
 echo <<<EOT
 <!DOCTYPE html>
@@ -23,6 +25,8 @@ echo <<<EOT
 					<a href="$index"><img src="$assets/icons/house-door-fill.svg" alt="Home"/></a>
 					<a href="$image"><img src="$assets/icons/images.svg" alt="Contact"/></a>
 					<a href="$news"><img src="$assets/icons/newspaper.svg" alt="Contact"/></a>
+					<a href="$mysql"><img src="$assets/icons/mysql-icon.svg" alt="MySQL" width=16 height=16/></a>
+					<a href="$sqlite"><img src="$assets/icons/sqlite-icon.svg" alt="Sqlite" width=16 height=16/></a>
 					</p>
 				</div>
 			</div>

@@ -60,7 +60,7 @@ if (isset($_GET['id'])) {
             <div class="col"></div>
             <div class="col">
                 <input class="btn btn-success" type="submit" value="Update">
-                <a class="btn btn-danger" href="read.php?page=<?=$page?>">Cancel</a>
+                <a class="btn btn-danger" href="index.php?page=<?=$page?>">Cancel</a>
             </div>  
         </div>   
         </form>              

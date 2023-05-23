@@ -1,5 +1,5 @@
 <?php
-include 'functions.php';
+include 'template.php';
 
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
