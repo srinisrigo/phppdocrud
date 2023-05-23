@@ -1,4 +1,5 @@
 <?php
+include '../template.php';
 include 'functions.php';
 $pdo = pdo_connect_mysql();
 $msg = '';

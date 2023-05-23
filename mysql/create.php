@@ -1,7 +1,8 @@
 <?php
+include '../template.php';
 include 'functions.php';
-include 'utility/country_codes.php';
-include 'utility/index.php';
+include '../utility/country_codes.php';
+include '../utility/index.php';
 $pdo = pdo_connect_mysql();
 $msg = '';
 $nameErr = "";

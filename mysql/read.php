@@ -1,4 +1,5 @@
 <?php
+include '../template.php';
 include 'functions.php';
 // Connect to MySQL database
 $pdo = pdo_connect_mysql();
